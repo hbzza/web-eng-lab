@@ -1,0 +1,125 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f3ef;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    background: #29476a;
+    color: white;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.form-section,
+.recipes-section {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000012;
+}
+
+label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font: inherit;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+button {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #29476a;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #456b8c;
+}
+
+.recipe-list {
+    display: grid;
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.recipe-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    overflow-wrap: anywhere;
+}
+
+.recipe-card img,
+#dialog-image {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.recipe-card h3 {
+    margin-top: 8px;
+}
+
+.recipe-card button {
+    margin-right: 5px;
+}
+
+#recipe-dialog {
+    width: 90%;
+    max-width: 550px;
+    border: none;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+#recipe-dialog::backdrop {
+    background: #0009;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 750px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Recipe Book</h1>
+        <p>Save, discover, and manage your favorite recipes.</p>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2 id="form-heading">Add a New Recipe</h2>
+
+            <form id="recipe-form">
+                <input type="hidden" id="recipe-id">
+
+                <label for="title">Recipe Title</label>
+                <input type="text" id="title"
+                       placeholder="Enter recipe title" required>
+
+                <label for="ingredients">Ingredients</label>
+                <textarea id="ingredients"
+                          placeholder="Enter ingredients"
+                          required></textarea>
+
+                <label for="instructions">Instructions</label>
+                <textarea id="instructions"
+                          placeholder="Enter cooking instructions"
+                          required></textarea>
+
+                <label for="image">Recipe Image (optional)</label>
+                <input type="file" id="image" accept="image/*">
+
+                <button type="submit" id="submit-btn">
+                    Add Recipe
+                </button>
+
+                <button type="button" id="cancel-btn" hidden>
+                    Cancel Edit
+                </button>
+            </form>
+        </section>
+
+        <section class="recipes-section">
+            <h2>My Recipes</h2>
+
+            <input type="search" id="search"
+                   placeholder="Search recipes...">
+
+            <div id="recipe-list" class="recipe-list"></div>
+        </section>
+    </main>
+
+    <dialog id="recipe-dialog">
+        <h2 id="dialog-title"></h2>
+        <img id="dialog-image" alt="Recipe image" hidden>
+        <h3>Ingredients</h3>
+        <p id="dialog-ingredients"></p>
+        <h3>Instructions</h3>
+        <p id="dialog-instructions"></p>
+        <button id="close-dialog">Close</button>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
