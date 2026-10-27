@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Web Calculator</title>
+    <link rel="stylesheet" href="lab7.css">
+</head>
+<body>
+    <main class="calculator">
+        <header class="top-bar">
+            <div>
+                <h1>Calculator</h1>
+                <p id="mode-label">Standard Mode</p>
+            </div>
+
+            <div class="menu-container">
+                <button id="menu-button" aria-label="Open menu"
+                        aria-expanded="false">⋮</button>
+
+                <nav id="submenu" class="submenu" hidden>
+                    <button data-mode="standard">Standard Mode</button>
+                    <button data-mode="scientific">Scientific Mode</button>
+                    <button data-mode="unit">Unit Conversion</button>
+                    <button data-mode="currency">Currency Conversion</button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Calculator display -->
+        <section id="calculator-panel">
+            <input id="display" type="text" value="0"
+                   aria-label="Calculator display" readonly>
+
+            <div id="scientific-keys" class="scientific-keys" hidden>
+                <button data-function="sqrt">√x</button>
+                <button data-function="square">x²</button>
+                <button data-function="sin">sin</button>
+                <button data-function="cos">cos</button>
+                <button data-function="tan">tan</button>
+                <button data-operator="^">xʸ</button>
+            </div>
+
+            <div class="keypad">
+                <button data-action="clear" class="special">AC</button>
+                <button data-action="delete" class="special">DEL</button>
+                <button data-operator="/">÷</button>
+                <button data-operator="*">×</button>
+
+                <button data-number="7">7</button>
+                <button data-number="8">8</button>
+                <button data-number="9">9</button>
+                <button data-operator="-">−</button>
+
+                <button data-number="4">4</button>
+                <button data-number="5">5</button>
+                <button data-number="6">6</button>
+                <button data-operator="+">+</button>
+
+                <button data-number="1">1</button>
+                <button data-number="2">2</button>
+                <button data-number="3">3</button>
+                <button data-action="equals" class="equals">=</button>
+
+                <button data-action="sign">+/−</button>
+                <button data-number="0">0</button>
+                <button data-action="decimal">.</button>
+            </div>
+        </section>
+
+        <!-- Unit conversion -->
+        <section id="unit-panel" hidden>
+            <h2>Unit Conversion</h2>
+
+            <label for="unit-category">Category</label>
+            <select id="unit-category">
+                <option value="length">Length</option>
+                <option value="weight">Weight</option>
+                <option value="temperature">Temperature</option>
+            </select>
+
+            <label for="unit-value">Value</label>
+            <input id="unit-value" type="number" value="1">
+
+            <label for="unit-from">From</label>
+            <select id="unit-from"></select>
+
+            <label for="unit-to">To</label>
+            <select id="unit-to"></select>
+
+            <button id="unit-convert" class="wide-button">Convert</button>
+            <p id="unit-result" class="result">Result will appear here.</p>
+        </section>
+
+        <!-- Currency conversion -->
+        <section id="currency-panel" hidden>
+            <h2>Currency Conversion</h2>
+
+            <label for="currency-amount">Amount</label>
+            <input id="currency-amount" type="number" value="1" min="0">
+
+            <label for="currency-from">From</label>
+            <select id="currency-from">
+                <option value="USD">USD — US Dollar</option>
+                <option value="PKR">PKR — Pakistani Rupee</option>
+                <option value="EUR">EUR — Euro</option>
+                <option value="GBP">GBP — British Pound</option>
+            </select>
+
+            <label for="currency-to">To</label>
+            <select id="currency-to">
+                <option value="PKR">PKR — Pakistani Rupee</option>
+                <option value="USD">USD — US Dollar</option>
+                <option value="EUR">EUR — Euro</option>
+                <option value="GBP">GBP — British Pound</option>
+            </select>
+
+            <label for="exchange-rate">Exchange rate</label>
+            <input id="exchange-rate" type="number"
+                   min="0.000001" step="any" placeholder="Enter rate">
+
+            <p class="hint">
+                Enter how many units of the target currency equal
+                one unit of the source currency.
+            </p>
+
+            <button id="currency-convert" class="wide-button">
+                Convert Currency
+            </button>
+
+            <p id="currency-result" class="result">
+                Result will appear here.
+            </p>
+        </section>
+    </main>
+
+    <script src="lab7.js"></script>
+</body>
+</html>
